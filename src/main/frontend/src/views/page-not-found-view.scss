@@ -1,0 +1,29 @@
+.page-not-found {
+  width: 450px;
+  margin: 50px auto;
+  text-align: center;
+  color: #204d74;
+  padding: 15px 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  .page-not-found-icon {
+    width: 300px;
+    cursor: pointer;
+  }
+
+  .back-button {
+    width: 300px;
+    text-align: center;
+    background: none;
+    border: none;
+    font-size: 1em;
+    color: white;
+    cursor: pointer;
+  }
+}
+
+*:focus {
+  outline: none;
+}
