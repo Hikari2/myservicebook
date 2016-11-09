@@ -1,0 +1,59 @@
+.time-line {
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  margin: 0 50px;
+
+  .left {
+    float: left;
+  }
+
+  .right {
+    float: right;
+  }
+
+  .time-line-header {
+    text-align: center;
+
+    .time-line-title {
+      font-size: 25px;
+      font-weight: 400;
+      font-family: 'open-sans', sans-serif;
+      border: solid 2px #3b4148;
+      margin: 0;
+      background-color: #3b3c48;
+    }
+  }
+
+  .time-line-block {
+    height: 168px;
+
+    .time-line-card {
+      width: 39.5%;
+      * {
+        margin-right: 0;
+        margin-left: 0;
+      }
+    }
+
+    .time-line-pointer {
+      height: 50%;
+      width: 10%;
+      border-bottom: solid 3px #3b4148;
+
+      .time-line-dot {
+        background-color: white;
+        height: 30px;
+        width: 30px;
+        border-radius: 50%;
+      }
+    }
+
+    .time-line-path {
+      background-color: #3b4148;
+      width: 1%;
+      height: 250px;
+    }
+  }
+}

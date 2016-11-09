@@ -1,0 +1,26 @@
+.card {
+  border-top: solid 8px white;
+  margin: 15px 20px;
+  padding: 20px 20px 20px 30px;
+  background-color: #fff;
+  color: black;
+  box-shadow: 0 1px 3px 0 rgba(0,0,0,0.2),0 1px 1px 0 rgba(0,0,0,0.14),0 2px 1px -1px rgba(0,0,0,0.12);
+
+  .row-label {
+    color: dimgrey;
+    font-weight: lighter;
+    font-family: 'open-sans', sans-serif;
+    margin: 0;
+  }
+
+  .row-value {
+    font-weight: 700;
+    font-family: 'open-sans', sans-serif;
+    margin: 0 0 20px;
+  }
+}
+
+.card:hover {
+  background-color: white;
+  box-shadow: 0 6px 8px 0 rgba(0,0,0,0.2),0 6px 7px 0 rgba(0,0,0,0.14),0 5px 6px 7px rgba(0,0,0,0.12);
+}
