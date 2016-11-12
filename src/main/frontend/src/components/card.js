@@ -5,9 +5,9 @@ export default React.createClass({
     return (
       <div className='card' style={{borderTopColor: this.props.color}}>
         {this.props.event_type ? this.renderEventType() : this.nothing()}
-        {this.props.entity_id ? this.renderEntityId() : this.nothing()}
+        {this.props.event_name ? this.renderEventName() : this.nothing()}
         {this.props.created_at ? this.renderCreatedAt() : this.nothing()}
-        {this.props.event_time ? this.renderEventTime() : this.nothing()}
+        {this.props.event_image ? this.renderEventImage() : this.nothing()}
       </div>
     )
   },
@@ -21,11 +21,11 @@ export default React.createClass({
     )
   },
 
-  renderEntityId () {
+  renderEventName () {
     return (
-      <div className='row entity_id'>
-        <p className='row-label'>ENTITY ID</p>
-        <p className='row-value'>{this.props.entity_id}</p>
+      <div className='row event_name'>
+        <p className='row-label'>EVENT NAME</p>
+        <p className='row-value'>{this.props.event_name}</p>
       </div>
     )
   },
@@ -39,11 +39,11 @@ export default React.createClass({
     )
   },
 
-  renderEventTime () {
+  renderEventImage () {
     return (
-      <div className='row event_time'>
-        <p className='row-label'>EVENT TIME</p>
-        <p className='row-value'>{this.props.event_time}</p>
+      <div className='row event_image'>
+        <p className='row-label'>EVENT IMAGE</p>
+        <p className='row-value'>{this.props.event_image}</p>
       </div>
     )
   },

@@ -1,0 +1,17 @@
+.header {
+  background-color: #464f56;
+  padding: 15px 25px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  h1 {
+    color: white;
+    font-size: 30px;
+    font-weight: 200;
+  }
+
+  .children {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
