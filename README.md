@@ -9,6 +9,11 @@ myServiceBook project for Cooperative IT Design course at KTH
   - Use "localhost:3000" or "localhost:8080"
 
 
+docker run \
+    --name myServiceBookDB \
+    -e POSTGRES_PASSWORD=1234 \
+    -p 5433:5432 postgres
+
 License
 ----
 myServiceBook
