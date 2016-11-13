@@ -9,8 +9,8 @@ export default (
   <Router history={browserHistory}>
     <Route path='/' component={Layout}>
       <IndexRoute component={HomeView} />
-      <Route path='*' component={PageNotFoundView}/>
       <Route path='/event-overview' component={EventOverview}/>
+      <Route path='*' component={PageNotFoundView}/>
     </Route>
   </Router>
 )

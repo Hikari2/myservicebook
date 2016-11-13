@@ -1,5 +1,5 @@
 import React from 'react'
-import API from '../api'
+// import API from '../api'
 import Card from '../components/card'
 import LoadingIcon from '../components/loading-icon'
 import NoResultFound from '../components/no-result-found'
@@ -10,7 +10,7 @@ import {createFilter} from 'react-search-input'
 import moment from 'moment'
 import { Link } from 'react-router'
 
-const KEYS_TO_FILTERS = ['event_time', 'event_type', 'entity_id']
+const KEYS_TO_FILTERS = ['entity_id']
 
 export default React.createClass({
   getInitialState () {
@@ -52,13 +52,23 @@ export default React.createClass({
   },
 
   fetchEvents () {
-    API.Event
-      .byEntityId({entityId: this.props.routeParams.entityId})
-      .then((response) => {
-        let sorted_events = response.data.sort(function (eventA, eventB) { return new Date(eventA.event_time) - new Date(eventB.event_time) })
-        let events = this.formatDates(sorted_events)
-        this.setState({events})
-      })
+    // API.Event
+    //   .byEntityId({entityId: this.props.routeParams.entityId})
+    //   .then((response) => {
+    //     let sorted_events = response.data.sort(function (eventA, eventB) { return new Date(eventA.event_time) - new Date(eventB.event_time) })
+    //     let events = this.formatDates(sorted_events)
+    //     this.setState({events})
+    // })
+
+    const events = [
+      {
+        entity_id: 1234
+      },
+      {
+        entity_id: 3456
+      }
+    ]
+    this.setState({events})
   },
 
   formatDates (events) {
