@@ -4,6 +4,5 @@
 target/
 src/main/resources/public/
 src/main/frontend/node_modules/
-src/main/resources/application.properties
 ost.iml
 *.log

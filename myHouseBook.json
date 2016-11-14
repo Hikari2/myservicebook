@@ -1,0 +1,41 @@
+{
+  "name": "Rafael",
+  "address": "östermal 123",
+  "floor_area": 230,
+  "number_of_rooms": 3,
+  "events": [
+      {
+        "title": "Fixing the shitter",
+        "type": "renovation",
+        "sub_events": [
+          {
+            "name": "toilet",
+            "date": 1212,
+            "room": 1,
+            "verifier": "jason",
+            "files": [
+              {
+                "id": 12
+              }
+            ]
+          },
+          {
+            "name": "bathroom",
+            "date": 1212,
+            "room": 3,
+            "verifier": "freddy",
+            "files": [
+
+            ]
+          }
+        ]
+      }
+  ],
+  "files": [
+    {
+      "name": "holy bible",
+      "id": 12,
+      "date": 1234
+    }
+  ]
+}
