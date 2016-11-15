@@ -4,6 +4,8 @@ import Layout from './views/layout'
 import HomeView from './views/home-view'
 import PageNotFoundView from './views/page-not-found-view'
 import EventOverview from './views/event-overview-view'
+// import documents from './views/documents-view'
+// <Route path='/documents' component={Documents}/>
 
 export default (
   <Router history={browserHistory}>
