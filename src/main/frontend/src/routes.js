@@ -4,12 +4,16 @@ import Layout from './views/layout'
 import HomeView from './views/home-view'
 import PageNotFoundView from './views/page-not-found-view'
 import EventOverview from './views/event-overview-view'
+import Login from './views/login-view'
+// import documents from './views/documents-view'
+// <Route path='/documents' component={Documents}/>
 
 export default (
   <Router history={browserHistory}>
     <Route path='/' component={Layout}>
       <IndexRoute component={HomeView} />
       <Route path='/event-overview' component={EventOverview}/>
+      <Route path='/login' component={Login}/>
       <Route path='*' component={PageNotFoundView}/>
     </Route>
   </Router>

@@ -1,0 +1,140 @@
+.login-view {
+  width: 100vw;
+  height: 100vh;
+  min-height: 600px;
+  background-image: url('http://www.cityhdwallpapers.com/wp-content/uploads/2016/February/19/Sweden/Stockholm/1920x1080/city-at-night,-Stockholm-city-wallpaper-1920x1080.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .title-wrapper {
+    text-align: center;
+    line-height: 0px;
+    color: white;
+
+    .house-logo {
+      width: 150px;
+    }
+
+    .title {
+      font-family: 'open-sans', sans-serif;
+      font-weight: bold;
+      font-size: 54px;
+      margin-top: 13px;
+    }
+
+    .sub-title {
+      font-family: 'open-sans', sans-serif;
+      font-weight: 100;
+      font-size: 20px;
+      letter-spacing: 4px;
+    }
+  }
+
+  .login-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    margin: 80px 0px 0px 0px;
+    padding: 25px 35px;
+    background-color: rgba(1, 1, 71, .6);
+
+    input {
+      width: 250px;
+      height: 40px;
+      padding: 0px 10px;
+      font-family: 'open-sans', sans-serif;
+      font-weight: bold;
+      font-size: 14px;
+      letter-spacing: 4px;
+      margin: 15px 0px;
+    }
+
+    .submit-button{
+      color: white;
+      background-color: orange;
+      border-radius: 5px;
+      border-width: 0px;
+      padding: 5px 25px;
+    }
+
+    .submit-button:hover{
+      color: grey;
+    }
+
+    .register-button{
+      color: white;
+      background-color: rgb(1, 1, 71);
+      border-width: 0px;
+      padding: 5px 25px;
+    }
+
+    .register-button:hover{
+      color: grey;
+    }
+  }
+
+  @media screen and (max-width: 650px) , screen and (max-height: 600px) {
+    .title-wrapper {
+      .house-logo {
+        width: 100px;
+      }
+
+      .title {
+        font-size: 32px;
+      }
+
+      .sub-title {
+        font-size: 12px;
+        letter-spacing: 0px;
+      }
+    }
+
+    .login-form{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: stretch;
+      margin: 20px 0px 0px 0px;
+      padding: 5px 15px;
+      background-color: rgba(1, 1, 71, .6);
+
+      input {
+        width: 250px;
+        height: 40px;
+        padding: 0px 10px;
+        font-family: 'open-sans', sans-serif;
+        font-weight: bold;
+        font-size: 14px;
+        letter-spacing: 4px;
+        margin: 15px 0px;
+      }
+
+      .submit-button{
+        color: white;
+        background-color: orange;
+        border-radius: 5px;
+        border-width: 0px;
+        padding: 5px 25px;
+      }
+
+      .submit-button:hover{
+        color: grey;
+      }
+
+      .register-button{
+        color: white;
+        background-color: rgb(1, 1, 71);
+        border-width: 0px;
+        padding: 5px 25px;
+      }
+
+      .register-button:hover{
+        color: grey;
+      }
+    }
+  }
+}
