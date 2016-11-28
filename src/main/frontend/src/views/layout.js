@@ -1,14 +1,18 @@
 import React from 'react'
-// import NavigationBar from './../components/nav-bar'
+import NavigationBar from './../components/nav-bar'
 import Footer from '../components/footer'
 
 export default React.createClass({
 
   render () {
-    // const items = [{label: 'Timeline', link: '/event-overview'}, {label: 'Documents', link: '/documents'}]
-        // <NavigationBar options={items}/>
+    const items = [
+      {label: 'TIMELINE', link: '/event-overview'},
+      {label: 'DOCUMENTS', link: '/documents'},
+      {label: 'CONTATCTS', link: '/contacts'}
+    ]
     return (
       <div className='layout'>
+        <NavigationBar options={items}/>
         <main>
           {this.props.children}
         </main>
