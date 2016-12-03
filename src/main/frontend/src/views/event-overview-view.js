@@ -40,10 +40,10 @@ export default React.createClass({
     let cards = filtered_events.map((data) => {
       return (
         <Link className='event-link' to={`/event-detail/${data.id}`}>
-          <Card 
+          <Card
             event_type={data.event_type}
-            event_date={data.event_date} 
-            event_time={data.event_time} 
+            event_date={data.event_date}
+            event_time={data.event_time}
             event_room={data.event_room}
             event_info={data.event_info}
             event_confirmed={data.event_confirmed}
@@ -102,7 +102,7 @@ export default React.createClass({
         event_confirmed: true,
         event_confirm_name: 'Fredric Johnson',
         event_confirm_company: 'Broadband Now AB'
-      },
+      }
     ]
     this.setState({events})
   },

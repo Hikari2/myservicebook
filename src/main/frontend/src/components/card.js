@@ -1,6 +1,6 @@
-import React from 'react';
-import FaBed from 'react-icons/lib/fa/bed';
-import FaStar from 'react-icons/lib/fa/star';
+import React from 'react'
+import FaBed from 'react-icons/lib/fa/bed'
+import FaStar from 'react-icons/lib/fa/star'
 
 export default React.createClass({
   render () {
@@ -18,7 +18,7 @@ export default React.createClass({
           </div>
           <div className='col'>
             {this.renderEventConfimed(this.props.event_confirmed)}
-            <p>By: {this.props.event_confirm_name ? this.props.event_confirm_name : "-"}</p>
+            <p>By: {this.props.event_confirm_name ? this.props.event_confirm_name : '-'}</p>
             <p>{this.props.event_confirm_company ? this.props.event_confirm_company : this.nothing()}</p>
           </div>
           <div className='col'>
@@ -40,7 +40,7 @@ export default React.createClass({
   renderEventDate () {
     return (
       <div>
-        <p className="row-date">{this.props.event_date}</p>
+        <p className='row-date'>{this.props.event_date}</p>
       </div>
     )
   },
@@ -73,8 +73,8 @@ export default React.createClass({
     return (
       <div className='row'>
         <p>Confirmed: </p>
-        <div className="card-star">{isConfirmed ? (<FaStar color='green' />) : (<FaStar color='#7f7f7f'/>)}</div>
-      </div> 
+        <div className='card-star'>{isConfirmed ? (<FaStar color='green' />) : (<FaStar color='#7f7f7f'/>)}</div>
+      </div>
     )
   },
 
