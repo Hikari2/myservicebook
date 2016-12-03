@@ -40,7 +40,15 @@ export default React.createClass({
     let cards = filtered_events.map((data) => {
       return (
         <Link className='event-link' to={`/event-detail/${data.id}`}>
-          <Card event_type={data.event_type} event_time={data.event_time}/>
+          <Card 
+            event_type={data.event_type}
+            event_date={data.event_date} 
+            event_time={data.event_time} 
+            event_room={data.event_room}
+            event_info={data.event_info}
+            event_confirmed={data.event_confirmed}
+            event_confirm_name={data.event_confirm_name}
+            event_confirm_company={data.event_confirm_company} />
         </Link>
       )
     })
@@ -62,11 +70,39 @@ export default React.createClass({
 
     const events = [
       {
-        entity_id: 1234
+        entity_id: 1234,
+        event_room: 'Kitchen',
+        info: 'leakage',
+        event_type: 'Plumbering',
+        event_date: 'Nov 7',
+        event_info: 'leakage',
+        event_confirmed: true,
+        event_confirm_name: 'John Johnson',
+        event_confirm_company: 'Johns Plumbering'
       },
       {
-        entity_id: 3456
-      }
+        entity_id: 3456,
+        event_room: 'Bedroom',
+        event_info: '5 liters was needed',
+        event_type: 'Painted Bedroom',
+        event_date: 'Oct 24'
+      },
+      {
+        entity_id: 1234,
+        event_room: 'Livingroom',
+        event_info: 'Only 3 walls',
+        event_type: 'Painted Livingroom',
+        event_date: 'Feb 7'
+      },
+      {
+        entity_id: 1234,
+        event_room: 'All',
+        event_type: 'Broadband',
+        event_date: 'Oct 7',
+        event_confirmed: true,
+        event_confirm_name: 'Fredric Johnson',
+        event_confirm_company: 'Broadband Now AB'
+      },
     ]
     this.setState({events})
   },
