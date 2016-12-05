@@ -11,7 +11,9 @@
 
   .path-container {
     padding: 5px 50px 5px 50px;
-    color: grey;
+    font-size: 21px;
+    font-weight: 800;
+    color: #a2a3a5;
   }
 
   .main-container {
@@ -50,6 +52,7 @@
     }
 
     .image {
+      cursor: pointer;
       margin-right: 80px;
       color: grey;
       .image-icon {

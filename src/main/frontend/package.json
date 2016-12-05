@@ -20,7 +20,9 @@
     "react": "^15.2.1",
     "react-dom": "^15.2.1",
     "react-dropdown": "^1.2.0",
+    "react-dropzone": "^3.7.3",
     "react-json-pretty": "^1.2.1",
+    "react-modal": "^1.5.2",
     "react-router": "^2.6.0",
     "react-search-input": "^0.10.3",
     "webpack-inject-css-loader": "^0.1.0"

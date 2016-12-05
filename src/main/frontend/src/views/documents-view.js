@@ -23,8 +23,9 @@ export default React.createClass({
       {
         label: 'Folder',
         icon: 'fa-folder-o',
-        onClick: () => {
-          this.newFolder('XXX')
+        modal: true,
+        onClick: (name) => {
+          this.newFolder(name)
         }
       },
       {
