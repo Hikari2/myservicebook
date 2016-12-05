@@ -1,16 +1,12 @@
 import React from 'react'
 import FaBed from 'react-icons/lib/fa/bed'
-<<<<<<< HEAD
-import FaStar from 'react-icons/lib/fa/star'
-=======
 import FaCheck from 'react-icons/lib/fa/check'
 import EventModal from './event-modal'
->>>>>>> create events
 
 export default React.createClass({
   getInitialState () {
     return {
-      modalIsOpen: false
+      modalIsOpen: false,
     }
   },
 
@@ -91,11 +87,7 @@ export default React.createClass({
     return (
       <div className='row'>
         <p>Confirmed: </p>
-<<<<<<< HEAD
-        <div className='card-star'>{isConfirmed ? (<FaStar color='green' />) : (<FaStar color='#7f7f7f'/>)}</div>
-=======
         <div className='card-star'>{isConfirmed ? (<FaCheck color='green' />) : (<FaCheck color='#7f7f7f'/>)}</div>
->>>>>>> create events
       </div>
     )
   },

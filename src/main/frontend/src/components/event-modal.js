@@ -44,8 +44,7 @@ export default React.createClass({
           </div>
         </ModalBody>
         <ModalFooter>
-          <button className='btn btn-default' onClick={this.props.hideModal}>Cancel</button>
-          <button className='btn btn-primary'>Create Event</button>
+          <button className='btn btn-primary modalOK' onClick={this.props.hideModal} ><b>OK</b></button>
         </ModalFooter>
       </Modal>
     )

@@ -1,7 +1,4 @@
 .event-overview {
-  width: 1180px;
-  margin: 0 auto;
-
   .header {
 
     .filter-input-panel {
@@ -100,5 +97,11 @@
   border-radius: 5px;
 }
 
-
+.newEventButton {
+  background-color: #01012b;
+  color: orange;
+  border: solid 3px orange;
+  margin: 20px;
+  padding: 10px;
+}
 

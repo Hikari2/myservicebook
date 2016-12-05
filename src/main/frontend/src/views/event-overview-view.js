@@ -6,6 +6,7 @@ import NoResultFound from '../components/no-result-found'
 import Header from '../components/header'
 import FilterInputPanel from '../components/filter-input-panel'
 import TimeLine from '../components/time-line'
+import ViewHeader from '../components/view-header'
 import {createFilter} from 'react-search-input'
 import moment from 'moment'
 import DatePicker from 'react-datepicker'
@@ -47,13 +48,19 @@ export default React.createClass({
   render () {
     return (
       <div className='event-overview'>
-        <Header>
-          <FilterInputPanel setTermFunction={this.setFilterTerm}/>
-        </Header>
-
+      <ViewHeader heading={'TIMELINE'}/>
         {this.renderAddEventModal()}
-        <button className='btn btn-primary' onClick={this.openModal}>Create new event</button>
-        {this.state.events ? this.renderFilteredEvents() : <LoadingIcon />}
+        <div className="row">
+          <div className="col-md-2">
+            <button className={`btn btn-primary newEventButton`} onClick={this.openModal}><b>Create new event</b></button>
+          </div>
+          <div>
+            <FilterInputPanel setTermFunction={this.setFilterTerm}/>
+          </div>
+        </div>
+          <div className="col-md-8">
+            {this.state.events ? this.renderFilteredEvents() : <LoadingIcon />}
+          </div>
       </div>
     )
   },
@@ -96,19 +103,6 @@ export default React.createClass({
     let filtered_events = this.state.events.filter(createFilter(this.state.searchTerm, KEYS_TO_FILTERS))
     let cards = filtered_events.map((data) => {
       return (
-<<<<<<< HEAD
-        <Link className='event-link' to={`/event-detail/${data.id}`}>
-          <Card
-            event_type={data.event_type}
-            event_date={data.event_date}
-            event_time={data.event_time}
-            event_room={data.event_room}
-            event_info={data.event_info}
-            event_confirmed={data.event_confirmed}
-            event_confirm_name={data.event_confirm_name}
-            event_confirm_company={data.event_confirm_company} />
-        </Link>
-=======
         <Card
           event_type={data.event_type}
           event_date={data.event_date}
@@ -119,7 +113,7 @@ export default React.createClass({
           event_confirm_name={data.event_confirm_name}
           event_confirm_company={data.event_confirm_company}
           event_attachments={data.event_attachments} />
->>>>>>> create events
+
       )
     })
     return (
@@ -182,12 +176,8 @@ export default React.createClass({
         event_date: 'Oct 7',
         event_confirmed: true,
         event_confirm_name: 'Fredric Johnson',
-<<<<<<< HEAD
-        event_confirm_company: 'Broadband Now AB'
-=======
         event_confirm_company: 'Broadband Now AB',
         event_attachments: []
->>>>>>> create events
       }
     ]
     this.setState({events})
