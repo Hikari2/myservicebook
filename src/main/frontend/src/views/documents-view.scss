@@ -3,11 +3,14 @@
   flex-direction: column;
 
   .filter-container {
-    padding: 15px 50px 15px 50px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px 50px 10px 50px;
   }
 
   .path-container {
-    padding: 15px 50px 15px 50px;
+    padding: 5px 50px 5px 50px;
     color: grey;
   }
 
@@ -15,7 +18,7 @@
     display: flex;
     flex-direction: row;
     min-height: 600px;
-    padding: 50px 50px;
+    padding: 30px 50px;
     justify-content: flex-start;
     align-items: flex-start;
     flex-wrap: wrap;
@@ -54,6 +57,30 @@
         width: 234px;
         background-size: cover;
         background-repeat: no-repeat;
+      }
+    }
+  }
+
+  @media (max-width: 730px) {
+    .main-container {
+      padding: 30px 5px;
+      .folder {
+        margin-right: 40px;
+      }
+      .image {
+        margin-right: 40px;
+      }
+    }
+  }
+
+  @media (max-width: 575px) {
+    .main-container {
+      padding: 30px 0px;
+      .folder {
+        margin-right: 10px;
+      }
+      .image {
+        margin-right: 10px;
       }
     }
   }
