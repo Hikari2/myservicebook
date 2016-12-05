@@ -93,7 +93,7 @@ export default React.createClass({
           <input type='email' value={this.state.modalContractor} onChange={this.handleInputChange.bind(this, 'modalContractor')} className='form-control' />
           <label>Attachments</label>
           <Dropzone className='dropdiv' onDrop={this.onDrop}>
-            Drop attachments here...
+            {this.renderDropzoneBody()}
           </Dropzone>
         </ModalBody>
         <ModalFooter>
@@ -206,11 +206,8 @@ export default React.createClass({
     let selectOptions = []
     if (events != null) {
       _.each(events, function (event) {
-        _.map(event, function (val) {
-          if (typeof val === 'string' && val !== '') {
-            selectOptions.push({label: val, value: val})
-          }
-        })
+        selectOptions.push({label: event.event_type, value: event.event_type})
+        selectOptions.push({label: event.event_room, value: event.event_room})
       })
     }
     this.setState({selectOptions})
@@ -260,6 +257,18 @@ export default React.createClass({
 
   onDrop (files) {
     this.setState({attachments: files.map((file) => file.name)})
+  },
+
+  renderDropzoneBody () {
+    return (
+      <div>
+        Selected files:
+        {this.state.attachments !== undefined ? (<ul>
+        {this.state.attachments.map((fileName) =>
+          <li>{fileName}</li>)}
+        </ul>) : (0)}
+      </div>
+    )
   }
 
 })
