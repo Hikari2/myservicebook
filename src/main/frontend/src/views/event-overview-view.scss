@@ -101,7 +101,26 @@
   background-color: #01012b;
   color: orange;
   border: solid 3px orange;
-  margin: 20px;
+  margin: 15px;
   padding: 10px;
 }
 
+.Select--multi .Select-value {
+  background-color: #F19A42;
+  border-radius: 2px;
+  border: 1px solid #c2e0ff;
+  /* Fallback color for IE 8 */
+  border: 1px solid rgba(0, 126, 255, 0.24);
+  color: #007eff;
+  display: inline-block;
+  font-size: 0.9em;
+  line-height: 1.4;
+  margin-left: 5px;
+  margin-top: 5px;
+  vertical-align: top;
+}
+
+.inputMenu {
+  padding: 20px;
+  margin-left: 80px;
+}

@@ -3,13 +3,13 @@ import React from 'react'
 import Card from '../components/card'
 import LoadingIcon from '../components/loading-icon'
 import NoResultFound from '../components/no-result-found'
-import Header from '../components/header'
-import FilterInputPanel from '../components/filter-input-panel'
 import TimeLine from '../components/time-line'
 import ViewHeader from '../components/view-header'
 import {createFilter} from 'react-search-input'
 import moment from 'moment'
+import _ from 'lodash'
 import DatePicker from 'react-datepicker'
+import Select from 'react-select'
 import Dropzone from 'react-dropzone'
 
 import {
@@ -21,23 +21,28 @@ import {
   ModalFooter
 } from 'react-modal-bootstrap'
 
+import 'react-select/dist/react-select.css'
 import 'react-datepicker/dist/react-datepicker.css'
 
 const KEYS_TO_FILTERS = ['entity_id',
-                        'event_type']
+                        'event_type',
+                        'event_room',
+                        'event_info']
 
 export default React.createClass({
   getInitialState () {
     return {
       events: null,
-      searchTerm: ' ',
+      searchTerm: '',
       modalIsOpen: false,
       startDate: moment(),
       modalType: '',
       modalRoom: '',
       modalDescription: '',
       modalContractor: '',
-      modalAttachments: ''
+      modalAttachments: '',
+      selectValue: [],
+      selectOptions: []
     }
   },
 
@@ -48,19 +53,19 @@ export default React.createClass({
   render () {
     return (
       <div className='event-overview'>
-      <ViewHeader heading={'TIMELINE'}/>
+        <ViewHeader heading={'TIMELINE'}/>
         {this.renderAddEventModal()}
-        <div className="row">
-          <div className="col-md-2">
-            <button className={`btn btn-primary newEventButton`} onClick={this.openModal}><b>Create new event</b></button>
-          </div>
-          <div>
-            <FilterInputPanel setTermFunction={this.setFilterTerm}/>
+        <div className='row'>
+          <div className='col-md-6'>
+            <div className='col-md-8 inputMenu'>
+              <Select multi simpleValue value={this.state.selectValue} placeholder='Select filters' options={this.state.selectOptions} onChange={this.handleSelectChange} />
+            </div>
+            <button className='btn btn-primary newEventButton' onClick={this.openModal}><b>Create new event</b></button>
           </div>
         </div>
-          <div className="col-md-8">
-            {this.state.events ? this.renderFilteredEvents() : <LoadingIcon />}
-          </div>
+        <div className='col-md-8'>
+          {this.state.events ? this.renderFilteredEvents() : <LoadingIcon />}
+        </div>
       </div>
     )
   },
@@ -181,6 +186,7 @@ export default React.createClass({
       }
     ]
     this.setState({events})
+    this.formatFilters(events)
   },
 
   formatDates (events) {
@@ -194,6 +200,24 @@ export default React.createClass({
     this.setState({
       startDate: date
     })
+  },
+
+  formatFilters (events) {
+    let selectOptions = []
+    if (events != null) {
+      _.each(events, function (event) {
+        _.map(event, function (val) {
+          if (typeof val === 'string' && val !== '') {
+            selectOptions.push({label: val, value: val})
+          }
+        })
+      })
+    }
+    this.setState({selectOptions})
+  },
+
+  handleSelectChange (selectValue) {
+    this.setState({selectValue: selectValue, searchTerm: selectValue})
   },
 
   handleCreateEvent () {

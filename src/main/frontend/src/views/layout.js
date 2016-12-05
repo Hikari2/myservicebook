@@ -6,7 +6,7 @@ export default React.createClass({
 
   render () {
     const items = [
-      {label: 'TIMELINE', link: '/event-overview'},
+      {label: 'TIMELINE', link: '/overview'},
       {label: 'DOCUMENTS', link: '/documents'},
       {label: 'CONTATCTS', link: '/contacts'}
     ]

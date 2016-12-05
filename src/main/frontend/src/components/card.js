@@ -6,7 +6,7 @@ import EventModal from './event-modal'
 export default React.createClass({
   getInitialState () {
     return {
-      modalIsOpen: false,
+      modalIsOpen: false
     }
   },
 
