@@ -28,7 +28,6 @@
 
   .col {
     width: 300px;
-    float:left;
     .row {
       display: flex;
       flex-direction: col;
@@ -37,8 +36,7 @@
   }
 
   .card-star {
-    margin-left: 0px;
-    padding: 15px;
+    margin-left: 5px;
   }
 
   .row-label {
