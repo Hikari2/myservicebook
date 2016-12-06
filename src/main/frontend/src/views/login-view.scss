@@ -4,6 +4,7 @@
     width: 100vw;
     height: 100vh;
     min-height: 600px;
+    background-image: url('http://i.imgur.com/3gmU09y.png');
     background-size: cover;
     background-repeat: no-repeat;
     display: flex;
@@ -35,6 +36,15 @@
     }
   }
 
+  .erro-text {
+    background-color: #343435;
+    padding: 15px;
+    margin-bottom: -15px;
+    font-size: 21px;
+    font-weight: 400;
+    color: #f70101;
+  }
+
   .login-form{
     display: flex;
     flex-direction: column;
@@ -56,6 +66,7 @@
     }
 
     .submit-button{
+      cursor: pointer;
       color: white;
       background-color: orange;
       border-radius: 5px;
@@ -68,6 +79,7 @@
     }
 
     .register-button{
+      cursor: pointer;
       color: white;
       background-color: rgb(1, 1, 71);
       border-width: 0px;

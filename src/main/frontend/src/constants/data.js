@@ -1,3 +1,11 @@
+
+export const login = [
+  {
+    email: 'fake@gmail.com',
+    password: '1234'
+  }
+]
+
 export const files = [
   {
     type: 'folder',
