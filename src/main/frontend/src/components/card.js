@@ -1,16 +1,23 @@
 import React from 'react'
 import FaBed from 'react-icons/lib/fa/bed'
-import FaStar from 'react-icons/lib/fa/star'
+import FaCheck from 'react-icons/lib/fa/check'
+import EventModal from './event-modal'
 
 export default React.createClass({
+  getInitialState () {
+    return {
+      modalIsOpen: false
+    }
+  },
+
   render () {
     return (
-      <div className='card-wrapper'>
+      <div className='card-wrapper' onClick={this.openModal}>
         <div className='col card-date'>
           {this.props.event_type ? this.renderEventLogo() : this.nothing()}
           {this.props.event_date ? this.renderEventDate() : this.nothing()}
         </div>
-        <div className='card' style={{borderTopColor: this.props.color}}>
+        <div className='card col-md-8' style={{borderTopColor: this.props.color}}>
           <div className='col'>
             {this.props.event_type ? this.renderEventType() : this.nothing()}
             {this.props.event_room ? this.renderEventRoom() : this.nothing()}
@@ -23,8 +30,15 @@ export default React.createClass({
           </div>
           <div className='col'>
             <p>Attachments:</p>
+            {this.props.event_attachments ? this.renderAttachments() : this.nothing()}
+
           </div>
         </div>
+        <EventModal
+          isOpen={this.state.modalIsOpen}
+          hideModal={this.hideModal}
+          {...this.props}
+          />
       </div>
     )
   },
@@ -47,7 +61,7 @@ export default React.createClass({
 
   renderEventRoom () {
     return (
-      <div className='row'>
+      <div>
         <p>{`Room: ${this.props.event_room}`}</p>
       </div>
     )
@@ -63,7 +77,7 @@ export default React.createClass({
 
   renderEventType () {
     return (
-      <div className='row event_type'>
+      <div className='event_type'>
         <p className='card-title'>{this.props.event_type}</p>
       </div>
     )
@@ -73,8 +87,17 @@ export default React.createClass({
     return (
       <div className='row'>
         <p>Confirmed: </p>
-        <div className='card-star'>{isConfirmed ? (<FaStar color='green' />) : (<FaStar color='#7f7f7f'/>)}</div>
+        <div className='card-star'>{isConfirmed ? (<FaCheck color='green' />) : (<FaCheck color='#7f7f7f'/>)}</div>
       </div>
+    )
+  },
+
+  renderAttachments () {
+    return (
+      <ul className='attachments-list'>
+      {this.props.event_attachments.map((file) =>
+        <li><a href='#'>{file}</a></li>)}
+      </ul>
     )
   },
 
@@ -107,5 +130,17 @@ export default React.createClass({
 
   nothing () {
 
+  },
+
+  openModal () {
+    this.setState({
+      modalIsOpen: true
+    })
+  },
+
+  hideModal () {
+    this.setState({
+      modalIsOpen: false
+    })
   }
 })
