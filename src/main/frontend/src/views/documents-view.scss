@@ -1,0 +1,177 @@
+.documents-view {
+  display: flex;
+  flex-direction: column;
+
+  .filter-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px 50px 10px 50px;
+  }
+
+  .path-container {
+    padding: 5px 50px 5px 50px;
+    font-size: 21px;
+    font-weight: 800;
+    color: #a2a3a5;
+  }
+
+  .main-container {
+    display: flex;
+    flex-direction: row;
+    min-height: 600px;
+    padding: 30px 50px;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+
+
+    .clickalbe {
+      box-shadow: none;
+      transition: box-shadow 1s;
+      border: 2px solid white;
+    }
+
+    .clickalbe:hover {
+      border: 2px solid skyblue;
+    }
+
+    .folder {
+      margin-right: 80px;
+      color: grey;
+      .folder-icon-wrapper {
+        background-color: #d7d7d7;
+        padding: 10px 40px;
+        .folder-icon {
+          height: 140px;
+          width: 150px;
+          background-size: cover;
+          background-repeat: no-repeat;
+        }
+      }
+    }
+
+    .image {
+      cursor: pointer;
+      margin-right: 80px;
+      color: grey;
+      .image-icon {
+        height: 164px;
+        width: 234px;
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+      }
+    }
+
+    .pdf {
+      cursor: pointer;
+      margin-right: 80px;
+      color: grey;
+      canvas {
+        height: 164px;
+        width: 234px;
+      }
+    }
+  }
+
+  @media (max-width: 730px) {
+    .main-container {
+      padding: 30px 5px;
+      .folder {
+        margin-right: 40px;
+      }
+      .image {
+        margin-right: 40px;
+      }
+    }
+  }
+
+  @media (max-width: 575px) {
+    .main-container {
+      padding: 30px 0px;
+      .folder {
+        margin-right: 10px;
+      }
+      .image {
+        margin-right: 10px;
+      }
+    }
+  }
+}
+
+.ReactModalPortal {
+
+  h1 {
+    font-weight: 800;
+    font-size: 21px;
+    margin: 20px 0px;
+  }
+
+  input {
+    width: 250px;
+    padding: 5px;
+    margin: 15px 0px;
+    font-size: 13px;
+  }
+
+  .button-container {
+    display: flex;
+    flex-direction: row;
+
+    .blue {
+      color: white;
+      background-color: #4987e5;
+    }
+
+    .grey {
+      color: #626466;
+      background-color: #cbced3;
+    }
+
+    .blue:hover {
+      background-color: #3771ca;
+    }
+
+    .grey:hover {
+      background-color: #a2a3a5;
+    }
+
+    .button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100px;
+      margin-right: 10px;
+      padding: 8px 40px;
+      cursor: pointer;
+      p {
+        font-weight: 800;
+        margin: 0px;
+        font-size: 14px;
+      }
+    }
+
+    .button:hover {
+
+    }
+  }
+
+  .image {
+    cursor: pointer;
+    margin: 10px 0px;
+    color: grey;
+    .image-icon {
+      height: 150px;
+      width: 250px;
+      background-size: 100% 100%;
+      background-repeat: no-repeat;
+    }
+  }
+
+  .drop-zone {
+    padding: 25px;
+    border-style: dotted;
+    height: 150px;
+    width: 250px;
+  }
+}

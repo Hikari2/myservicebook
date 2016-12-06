@@ -17,7 +17,7 @@ export default React.createClass({
         <ul>
           <li className='nav-bar-logo'>
             <Link className='nav-bar-link' to={'/'}>
-              <img className='icon' src={'/images/logo.png'} alt='logo' onClick={self.clicked.bind(self, 0)}/>
+              <p>MyServiceBook</p>
             </Link>
           </li>
           {
