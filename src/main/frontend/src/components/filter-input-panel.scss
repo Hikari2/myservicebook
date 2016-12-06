@@ -32,5 +32,19 @@
         padding: 5px 10px 5px 30px;
       }
     }
+    .new-event-button {
+        background-color: #010147;
+        position: relative;
+        border: none;
+        border-radius: 2px;
+        height: 60px;
+        width: 260px;
+        font-size: 22px;
+        color: orange;
+        padding: 5px 10px 5px 30px;
+        margin-top: 10px;
+        border: solid 4px orange;
+
+    }
   }
 }
