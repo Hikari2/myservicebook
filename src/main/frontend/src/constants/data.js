@@ -8,7 +8,7 @@ export let files = [
         name: 'Toilet',
         content: [
           {
-            type: 'jpg',
+            type: 'image',
             url: 'http://kingfisher.scene7.com/is/image/Kingfisher/Project_Bathroom_Dream',
             name: 'paint_after'
           }
@@ -21,14 +21,14 @@ export let files = [
     name: 'Bedroom',
     content: [
       {
-        type: 'jpg',
+        type: 'image',
         url: 'http://www.ikea.com/gb/en/images/rooms/ikea-clean-green-and-clutter-free-__1364315962817-s4.jpg',
         name: 'paint_after'
       }
     ]
   },
   {
-    type: 'jpg',
+    type: 'image',
     url: 'https://upload.wikimedia.org/wikipedia/commons/4/40/Living_Room.jpg',
     name: 'paint_after'
   }
