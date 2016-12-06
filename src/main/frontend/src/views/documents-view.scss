@@ -19,7 +19,7 @@
   .main-container {
     display: flex;
     flex-direction: row;
-    min-height: 600px;
+    min-height: 400px;
     padding: 30px 50px;
     justify-content: flex-start;
     align-items: flex-start;
@@ -36,6 +36,10 @@
       border: 2px solid skyblue;
     }
 
+    .marked {
+      border: 2px solid skyblue;
+    }
+
     .folder {
       margin-right: 80px;
       color: grey;
@@ -43,6 +47,7 @@
         background-color: #d7d7d7;
         padding: 10px 40px;
         .folder-icon {
+          background-image: url('../assets/folder.png');
           height: 140px;
           width: 150px;
           background-size: cover;

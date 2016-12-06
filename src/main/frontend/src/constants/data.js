@@ -1,4 +1,4 @@
-export let files = [
+export const files = [
   {
     type: 'folder',
     name: 'Bathroom',
@@ -26,10 +26,20 @@ export let files = [
         name: 'paint_after'
       }
     ]
+  }
+]
+
+export const contacts = [
+  {
+    companyName: 'ELECTRIC ERIC',
+    name: 'Eric Ericsson',
+    phone: '070-12332112',
+    web: 'www.ee.se'
   },
   {
-    type: 'image',
-    url: 'https://upload.wikimedia.org/wikipedia/commons/4/40/Living_Room.jpg',
-    name: 'paint_after'
+    companyName: 'JOHNS PLUMBERING',
+    name: 'John Johnson',
+    phone: '070-12332114',
+    web: 'www.john.se'
   }
 ]

@@ -9,6 +9,7 @@ import DeepMerge from 'deepmerge'
 import Modal from 'react-modal'
 import DropZone from 'react-dropzone'
 import PDF from 'react-pdf'
+import Lightbox from 'react-images'
 
 const KEYS_TO_FILTERS = ['type', 'name']
 
@@ -19,10 +20,12 @@ export default React.createClass({
       dropModalOpen: false,
       dropModalType: '',
       value: 'Untitled',
-      preview: '',
+      uploadedItem: '',
       files: files.slice(),
       pathString: 'Documents',
-      searchTerm: ' '
+      searchTerm: ' ',
+      lightboxIsOpen: false,
+      selectedImage: ''
     })
   },
 
@@ -71,6 +74,11 @@ export default React.createClass({
         </div>
         {this.renderFolderModal()}
         {this.renderDropZoneModal()}
+        <Lightbox
+          images={[{ src: this.state.selectedImage }]}
+          isOpen={this.state.lightboxIsOpen}
+          onClose={() => { this.setState({lightboxIsOpen: false}) }}
+        />
       </div>
     )
   },
@@ -120,7 +128,7 @@ export default React.createClass({
       <div className='folder' key={`item-${index}`}>
         <Link to={{pathname: '/documents/', query: {path}}}>
           <div className='folder-icon-wrapper clickalbe'>
-            <div className='folder-icon' style={{backgroundImage: 'url(/images/folder.png)'}}/>
+            <div className='folder-icon' />
           </div>
         </Link>
         <p>{folder.name}</p>
@@ -130,8 +138,13 @@ export default React.createClass({
 
   renderImage (image, index) {
     return (
-      <div className='image' key={`item-${index}`}>
-        <div className='image-icon clickalbe' style={{backgroundImage: `url(${image.url})`}}/>
+      <div
+        className='image'
+        key={`item-${index}`}
+        onClick={() => {
+          this.setState({selectedImage: image.url, lightboxIsOpen: true})
+        }}>
+        <div className='image-icon clickalbe' style={{ backgroundImage: `url(${image.url})` }} />
         <p>{image.name}</p>
       </div>
     )
@@ -140,7 +153,7 @@ export default React.createClass({
   renderPdf (pdf, index) {
     return (
       <div className='pdf' key={`item-${index}`}>
-        <PDF file={pdf.url} scale={1}/>
+        <PDF file={pdf.url} />
         <p>{pdf.name}</p>
       </div>
     )
@@ -205,7 +218,7 @@ export default React.createClass({
     this.setState({ value })
   },
 
-  newItem (type, name, src) {
+  newItem (type, name, item) {
     const path = this.props.location.query.path ? this.props.location.query.path : []
     let folder = this.state.files.slice()
     path.forEach((pos) => {
@@ -213,8 +226,8 @@ export default React.createClass({
     })
     folder.push({
       type,
-      name,
-      url: src
+      name: name === 'Untitled' ? item.name : name,
+      url: item.preview
     })
 
     this.setState({files: DeepMerge(folder, this.state.files)})
@@ -231,7 +244,7 @@ export default React.createClass({
           className='drop-zone'
           multiple={false}
           onDrop={(acceptedFiles, rejectedFiles) => {
-            this.setState({preview: acceptedFiles[0].preview})
+            this.setState({uploadedItem: acceptedFiles[0]})
           }}
         >
           <div>Try dropping some files here, or click to select files to upload.</div>
@@ -249,8 +262,8 @@ export default React.createClass({
             <p>Cancel</p>
           </div>
           <div className='button blue' onClick={() => {
-            this.newItem(this.state.dropModalType, this.state.value, this.state.preview)
-            this.setState({preview: ''})
+            this.newItem(this.state.dropModalType, this.state.value, this.state.uploadedItem)
+            this.setState({uploadedItem: ''})
             this.closeDropModal()
           }}>
             <p>Create</p>
@@ -262,9 +275,9 @@ export default React.createClass({
 
   getPreview (type) {
     if (type === 'image') {
-      return <div className='image-icon clickalbe' style={{backgroundImage: `url(${this.state.preview})`}}/>
+      return <div className='image-icon clickalbe' style={{backgroundImage: `url(${this.state.uploadedItem.preview})`}}/>
     } else if (type === 'pdf') {
-      return <PDF file={this.state.preview} scale={0.4} loading={(<p/>)}/>
+      return <PDF file={this.state.uploadedItem.preview} scale={0.4} loading={(<p/>)}/>
     }
   },
 

@@ -1,3 +1,28 @@
 .contacts-view {
   height: 700px;
+
+  .main-container {
+    display: flex;
+    flex-direction: row;
+    padding: 100px 100px;
+
+    .contact-card {
+      margin-right: 80px;
+
+      .heading {
+        padding-right: 50px;
+        font-size: 18;
+        font-weight: 800;
+        border-bottom-style: solid;
+        border-color: orange;
+        margin-bottom: 10px;
+      }
+
+      .text {
+        font-size: 15px;
+        font-weight: 400;
+        margin-bottom: 8px;
+      }
+    }
+  }
 }

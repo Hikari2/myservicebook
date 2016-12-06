@@ -21,6 +21,7 @@
     "react-dom": "^15.2.1",
     "react-dropdown": "^1.2.0",
     "react-dropzone": "^3.7.3",
+    "react-images": "^0.5.2",
     "react-json-pretty": "^1.2.1",
     "react-modal": "^1.5.2",
     "react-pdf": "0.0.10",
