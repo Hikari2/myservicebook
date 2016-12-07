@@ -57,13 +57,13 @@ export default React.createClass({
         {this.renderAddEventModal()}
         <div className='row'>
           <div className='col-md-6'>
-            <div className='col-md-8 inputMenu'>
+            <div className='col-md-10 inputMenu'>
               <Select multi simpleValue value={this.state.selectValue} placeholder='Select filters' options={this.state.selectOptions} onChange={this.handleSelectChange} />
             </div>
             <button className='btn btn-primary newEventButton' onClick={this.openModal}><b>Create new event</b></button>
           </div>
         </div>
-        <div className='col-md-8'>
+        <div>
           {this.state.events ? this.renderFilteredEvents() : <LoadingIcon />}
         </div>
       </div>

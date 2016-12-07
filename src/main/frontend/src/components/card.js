@@ -17,7 +17,7 @@ export default React.createClass({
           {this.props.event_type ? this.renderEventLogo() : this.nothing()}
           {this.props.event_date ? this.renderEventDate() : this.nothing()}
         </div>
-        <div className='card col-md-8' style={{borderTopColor: this.props.color}}>
+        <div className='card col-md-10' style={{borderTopColor: this.props.color}}>
           <div className='col'>
             {this.props.event_type ? this.renderEventType() : this.nothing()}
             {this.props.event_room ? this.renderEventRoom() : this.nothing()}

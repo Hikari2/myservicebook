@@ -16,7 +16,7 @@ export default React.createClass({
       <div className='nav-bar'>
         <ul>
           <li className='nav-bar-logo'>
-            <Link className='nav-bar-link' to={'/'}>
+            <Link className='nav-bar-link' to={'/login'}>
               <p>MyServiceBook</p>
             </Link>
           </li>

@@ -21,7 +21,7 @@ export default React.createClass({
       loading: false,
       email: '',
       password: '',
-      error: ''
+      error: null
     })
   },
 
@@ -38,7 +38,7 @@ export default React.createClass({
     setTimeout(() => {
       this.setState({loading: false})
       if (this.verifyLogin()) {
-        this.props.history.push('/documents')
+        this.props.history.push('/overview')
       } else {
         this.setState({error: 'Something went wrong, make sure you have the right credentials'})
       }
@@ -64,7 +64,7 @@ export default React.createClass({
             <p className='title'>MyServiceBook</p>
             <p className='sub-title'>A DIGITAL SERVICE BOOK FOR YOUR HOUSE</p>
           </div>
-          <p className='erro-text'>{this.state.error}</p>
+          {this.state.error ? <p className='erro-text'>{this.state.error}</p> : ''}
           {this.state.loading ? <LoadingIcon /> : this.renderForm()}
         </div>
         <Footer />
